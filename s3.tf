@@ -39,6 +39,15 @@ resource "aws_ebs_snapshot" "example_snapshot" {
   }
 }
 
+resource "aws_s3_bucket" "test1" {
+    versioning {
+    enabled = true
+  }
+}
+
+resource "aws_s3_bucket" "test2" {
+}
+
 resource "aws_security_group" "web-node" {
   # security group is open to the world in SSH port
   name        = "${local.resource_prefix.value}-sg"
