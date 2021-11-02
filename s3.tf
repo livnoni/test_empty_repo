@@ -40,6 +40,12 @@ resource "aws_ebs_snapshot" "example_snapshot" {
 }
 
 resource "aws_s3_bucket" "test1" {
+    versioning {
+    enabled = true
+  }
+}
+
+resource "aws_s3_bucket" "test2" {
 }
 
 resource "aws_security_group" "web-node" {
